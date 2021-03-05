@@ -1,20 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+<div class="container">
+<ion-card> 
+  <ion-card-content>
+    <img class="logo" src="../../assets/images/Logo.png" alt="Loga Money SA"/>
+    <h1>Login</h1>
+  </ion-card-content>
+  <div class="bottom"></div>
+</ion-card>
+</div>
+<div class="login">
+  <ion-item>
+    <ion-label position="stacked">Telephone</ion-label>
+    <ion-input placeholder="77 777 77 77"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Password</ion-label>
+    <ion-input placeholder="......."></ion-input>
+  </ion-item>
+  <div class="link">
+    <a id="link" href="#">Mot de passe oublié?</a>
   </div>
+  <div class="btn">
+    <ion-button id="btn" color="secondary" routerLink="/admin">Se connecter</ion-button>
+  </div>
+</div>
 </ion-content>

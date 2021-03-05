@@ -1,27 +1,65 @@
-#container {
-  text-align: center;
+@import "../../assets/style/style.scss";
+ion-content
+{
+  --ion-background-color:#F2F2F2;
+  ion-card, .container
+    {
+      @extend %ion-card;
+    }
+    .logo{
+      border-radius: 20px;
+  }
+  img
+  {
+      margin-top: 15%;
+      margin-left: 15%;
+      width: 70%;
+      height: 30%;
+  }
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  h1
+  {
+      text-align: center;
+      @extend %font-text;
+      font-size: 25px;
+      line-height: 21px;
+      padding-top: 50px;
+      color: $title-color;
+  }
+
+  .bottom
+  {
+      border-bottom: 5px solid $color-secondary;
+      width: 50%;
+      margin-left: 25%;
+  }
+  .login
+  {
+    margin-top: 15%;
+  }
+  .link{
+    margin-top: 10%;
+    margin-left: 3%;
+    #link{
+      text-decoration: none;
+      @extend %font-text;
+      font-size: 17px;
+      line-height: 20px;
+      color: $color-secondary;
+    }
+  }
+  .btn
+  {
+    margin-left: 13%;
+    margin-top: 10%;
+    #btn
+    {
+      background: $color-secondary;
+      border-radius: 30px;
+      width: 80%;
+      height: 50px;
+    }
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}

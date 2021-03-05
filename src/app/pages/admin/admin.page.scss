@@ -1,0 +1,74 @@
+@import "../../../assets/style/style.scss";
+
+ion-header
+{
+    ion-list-header
+    {
+       background-color:$background;
+
+        .logo
+        {
+            width: 40%;
+            height: 48%;
+            margin-left: 7%;
+            margin-right: 8%;
+        }
+        .user
+            {
+                width: 40px;
+                height: 40px;
+                border-radius:50%;
+                margin-right: -30px;
+                background-color: $color-secondary;
+            }
+
+    }
+
+}
+ion-content
+{
+    .title, .money
+    {
+        @extend %font-text;
+    }
+    .money
+    {
+        color: $color-secondary;
+        padding:5px;
+    }
+    .hidden
+    {
+        float:right;
+        margin-top: -30px;
+    }
+
+    .nav-link
+        {
+        width:95%;
+        margin-left:2.5%;
+
+        ion-item
+        {
+            border-bottom: 2px solid $icon-color;
+            span
+            {
+                margin-left:10px;
+            }
+          ion-icon
+          {
+            font-size: 20px;
+            color: $icon-color;;
+          }
+            a
+            {
+                text-decoration: none;
+                @extend %font-text;
+            }
+        }
+        .item
+        {
+            padding-top: 3px;
+        }
+
+    }
+}

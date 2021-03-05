@@ -1,0 +1,81 @@
+<ion-content>
+  <div class="container">
+    <ion-card>
+      <ion-card-content>
+        <button><img src="../../../assets/icon/accueil.png" alt="Menu"/></button>
+        <img class="logo" src="../../assets/images/Logo.png" alt="Loga Money SA"/>
+      </ion-card-content>
+      <div class="bottom"></div>
+    </ion-card>
+  </div>
+  <div class="wrapper">
+    <ion-card class="content">
+      <ion-card-content>
+        <ion-segment [(ngModel)]="selectTabs">
+          <ion-segment-button value="emetteur">
+            <h2>Emetteur</h2>
+          </ion-segment-button>
+          <ion-segment-button value="beneficiaire">
+            <h2>Bénéficiaire</h2>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div class="item">
+    <form>
+      <div *ngIf="selectTabs == 'emetteur'">
+        <ion-item>
+          <ion-label position="stacked">N°CNI</ion-label>
+          <ion-input placeholder="1 291 1998 23 221"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Nom</ion-label>
+          <ion-input placeholder="DIALLO"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Prénom</ion-label>
+          <ion-input placeholder="Saliou"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Téléphone</ion-label>
+          <ion-input placeholder="77 007 77 70"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Montant</ion-label>
+          <ion-input placeholder="350 000"></ion-input>
+        </ion-item>
+        <ion-item class="frais">
+          <ion-label position="stacked">Frais</ion-label>
+          <ion-input placeholder="12 000"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Total</ion-label>
+          <ion-input placeholder="362 000"></ion-input>
+        </ion-item>
+      </div>
+      <div *ngIf="selectTabs == 'beneficiaire'">
+        <ion-item>
+          <ion-label position="stacked">N°CNI</ion-label>
+          <ion-input placeholder="1 291 1998 23 221"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Nom</ion-label>
+          <ion-input placeholder="DIALLO"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Prénom</ion-label>
+          <ion-input placeholder="Mariama"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Téléphone</ion-label>
+          <ion-input placeholder="77 008 08 08"></ion-input>
+        </ion-item>
+      </div>
+      <div class="btn">
+        <button id="btn" (click)="OnSubmit()">Suivant</button>
+      </div>
+    </form>
+  </div>
+</ion-content>

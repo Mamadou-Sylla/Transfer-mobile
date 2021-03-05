@@ -1,0 +1,17 @@
+$color-secondary:#07AEEF;
+$icon-color:#FA4A0C;
+$background: #F2F2F2;
+$title-color:#22497C;
+%font-text{
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+  }
+%ion-card{
+    background: #FFFFFF;
+    border-radius: 0px 0px 30px 30px;
+    margin: 0;
+    width: 100%;
+}
+
