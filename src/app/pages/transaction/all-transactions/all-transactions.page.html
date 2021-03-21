@@ -1,0 +1,57 @@
+<ion-content class="ion-margin">
+  <div class="container">
+    <ion-card>
+      <ion-card-content>
+        <button routerLink="/admin"><img src="../../../assets/icon/accueil.png" alt="Menu"/></button>
+        <img class="logo" src="../../assets/images/Logo.png" alt="Loga Money SA"/>
+      </ion-card-content>
+      <h1><span><ion-icon name="checkmark-done-circle-outline"></ion-icon></span>Toutes les transactions</h1>
+      <div class="bottom"></div>
+    </ion-card>
+  </div>
+  <ion-grid class="ion-margin">
+    <ion-row>
+      <ion-col id="thead">Date</ion-col>
+      <ion-col id="thead">Utilisateur</ion-col>
+      <ion-col id="thead">Type</ion-col>
+      <ion-col id="thead">Montant</ion-col>
+      <ion-col id="thead">Frais</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let item of data | paginate: { itemsPerPage: 6, currentPage: page, id: 'first',
+ totalItems: totalLength}; let i = index" [attr.data-index]="i">
+      <ion-col id="tbody" *ngIf="item.dateRetrait==null && item.type!='Cancelled'">{{item.date_depot | date:'shortDate'}}</ion-col>
+      <ion-col id="tbody"  *ngIf="item.dateRetrait!=null && item.type!='Cancelled'">{{item.date_retrait | date:'shortDate'}}</ion-col>
+      <ion-col id="tbody" *ngIf="item.type!='Cancelled'">{{item.users.prenom}} {{ item.users.nom}}</ion-col>
+      <ion-col id="tbody" *ngIf="item.type!='Cancelled'">{{item.type}}</ion-col>
+      <ion-col id="tbody" *ngIf="item.type!='Cancelled'">{{item.montant}}</ion-col>
+      <ion-col id="tbody" *ngIf="item.type!='Cancelled'">{{item.frais}}</ion-col>
+    </ion-row>
+  </ion-grid>
+  <div>
+    <pagination-controls class="my-pagination" style="width:30%" (pageChange)="page = $event" id="first"></pagination-controls>
+  </div>
+
+  <ion-item lines="none" class="ion-float-right">
+    <div class="total">
+      <span id="total">Total</span> {{sum}}
+    </div>
+  </ion-item>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button routerLink="/admin" tab="schedule">
+        <ion-img src="../../../assets/icon/home-inactif.png"></ion-img>
+      </ion-tab-button>
+      <ion-tab-button tab="schedule">
+        <ion-img src="../../../assets/icon/trsct.png"></ion-img>
+      </ion-tab-button>
+      <ion-tab-button tab="schedule">
+        <ion-img src="../../../assets/icon/Vector (13).png"></ion-img>
+      </ion-tab-button>
+      <ion-tab-button tab="schedule">
+        <ion-img src="../../../assets/icon/calculateur de frais.png"></ion-img>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>
+

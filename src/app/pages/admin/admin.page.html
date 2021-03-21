@@ -1,7 +1,9 @@
 <ion-header>
 <ion-list-header>
   <ion-button class="menu">
+    <ion-menu-button menu='main-menu'>
       <img src="../../../assets/icon/menu.png" alt="Menu"/>
+    </ion-menu-button>
   </ion-button>
   <ion-img class="logo" src="../../../assets/images/Logo.png"></ion-img>
   <button class="user">
@@ -15,7 +17,7 @@
     <ion-card-content>
       <p class="title">Mon solde disponible</p>
       <h1 class="money">150 000</h1>
-      <button class="hidden">
+      <button class="hidden" id="main-menu">
         <img src="../../../assets/icon/hidden.png" alt="Menu"/>
     </button>
       <p class="title">Mise à jour le 22/02/21 à 13:15</p>
@@ -27,49 +29,49 @@
 
     <ion-item button class="item">
       <ion-label>
-      <a [routerLink]="['/admin']"><ion-icon name="return-up-forward-outline"></ion-icon><span>Dépôt</span></a>
+      <a [routerLink]="['/depot']"><ion-icon name="return-up-forward-outline"></ion-icon><span>Dépôt</span></a>
       </ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </ion-item>
 
     <ion-item button class="item">
       <ion-label>
-        <a href=""><ion-icon name="return-up-back-outline"></ion-icon><span>Retrait</span></a>
+        <a [routerLink]="['/retrait']"><ion-icon name="return-up-back-outline"></ion-icon><span>Retrait</span></a>
       </ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </ion-item>
 
     <ion-item button class="item">
       <ion-label>
-        <a href=""><ion-icon name="sync-outline"></ion-icon><span>Mes transactions</span></a>
+        <a [routerLink]="['/list-transactions']"><ion-icon name="sync-outline"></ion-icon><span>Mes transactions</span></a>
       </ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </ion-item>
 
     <ion-item button class="item">
       <ion-label>
-        <a href=""><ion-icon name="checkmark-done-circle-outline"></ion-icon><span>Toutes les transactions</span></a>
+        <a [routerLink]="['/all-transactions']"><ion-icon name="checkmark-done-circle-outline"></ion-icon><span>Toutes les transactions</span></a>
       </ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </ion-item>
 
     <ion-item button class="item">
       <ion-label>
-        <a href=""><ion-icon name="apps-outline"></ion-icon><span>Mes commissions</span></a>
+        <a [routerLink]="['/commission']"><ion-icon name="apps-outline"></ion-icon><span>Mes commissions</span></a>
       </ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </ion-item>
 
     <ion-item button class="item">
       <ion-label>
-        <a href=""><ion-icon name="calculator-outline"></ion-icon><span>Calculateur de frais</span></a>
+        <a [routerLink]="['/calculateur']"><ion-icon name="calculator-outline"></ion-icon><span>Calculateur de frais</span></a>
       </ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </ion-item>
 
     <ion-item button class="item">
       <ion-label>
-        <a href=""><ion-icon name="arrow-undo-outline"></ion-icon><span>Déconnexion</span></a>
+        <a (click)="logout()"><ion-icon name="arrow-undo-outline"></ion-icon><span>Déconnexion</span></a>
       </ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </ion-item>
@@ -78,18 +80,19 @@
 
   <ion-tabs>
     <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="schedule">
+      <ion-tab-button routerLink="/admin" tab="schedule">
         <ion-img src="../../../assets/icon/home.png"></ion-img>
       </ion-tab-button>
-      <ion-tab-button tab="schedule">
+      <ion-tab-button routerLink="/list-transactions" tab="schedule">
         <ion-img src="../../../assets/icon/Vector (22).png"></ion-img>
       </ion-tab-button>
-      <ion-tab-button tab="schedule">
+      <ion-tab-button routerLink="/commission" tab="schedule">
         <ion-img src="../../../assets/icon/Vector (13).png"></ion-img>
       </ion-tab-button>
-      <ion-tab-button tab="schedule">
+      <ion-tab-button routerLink="/calculateur" tab="schedule">
         <ion-img src="../../../assets/icon/calculateur de frais.png"></ion-img>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>
 </ion-content>
+

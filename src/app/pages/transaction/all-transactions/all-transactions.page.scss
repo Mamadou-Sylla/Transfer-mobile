@@ -1,0 +1,137 @@
+@import "../../../../assets/style/style.scss";
+ion-content
+{
+  --ion-background-color:#F2F2F2;
+  ion-card, .container, .content
+  {
+    @extend %ion-card;
+  }
+  .logo{
+    border-radius: 20px;
+  }
+  img
+  {
+    width: 30%;
+    height: 48%;
+    margin-left: 7%;
+    margin-right: 8%;
+    padding-top: 5%;
+  }
+
+  h1
+  {
+    text-align: center;
+    @extend %font-text;
+    font-size: 25px;
+    line-height: 21px;
+    padding-top: 10px;
+    color: $title-color;
+  }
+  button
+  {
+    background-color: #FFFFFF;
+    width: 30%;
+    height: 30%;
+    margin-left: -20px;
+  }
+  span
+  {
+    color: $color-secondary;
+    margin-left: -10px;
+    ion-icon
+    {
+      /*size: 100px;
+      width: 80px;
+      height: 30px;*/
+      font-size: 40px;
+      margin-bottom: -10px;
+    }
+  }
+  .bottom
+  {
+    border-bottom: 5px solid $color-secondary;
+    width: 50%;
+    margin-left: 25%;
+  }
+  .wrapper, .item
+  {
+    margin-top:20px
+  }
+  .content
+  {
+    border-radius: 30px;
+  }
+  ion-segment-button
+  {
+    --ion-background-color:#F2F2F2;
+    --color-checked: #FA4A0C;
+  }
+  h2
+  {
+    @extend %font-text;
+  }
+  .ios ion-segment
+  {
+    background: #FFFFFF;
+  }
+  ion-label
+  {
+    font-size: 20px;
+  }
+  .frais
+  {
+    width: 45%;
+    margin-left: 51%;
+    ion-input
+    {
+      color: $icon-color;
+    }
+  }
+  .btn
+  {
+    margin-top: 10%;
+    #btn
+    {
+      margin-left: 10%;
+      background: $icon-color;
+      border-radius: 30px;
+      width: 80%;
+      height: 70px;
+      margin-bottom: 20px;
+      color: #FFFFFF;
+      font-size: 30px;
+    }
+
+  }
+
+  p
+  {
+    margin: 10px;
+  }
+  #thead
+  {
+    font-weight: bold;
+    font-size: 10px;
+  }
+  #tbody
+  {
+    font-size: 10px;
+  }
+}
+
+.total
+{
+  border: 1px solid $icon-color;
+  padding: 10px;
+  border-radius: 30px;
+  float: right;
+}
+#total
+{
+  padding: 11px;
+  background-color: $icon-color;
+  border-radius: 35px;
+}
+
+
+

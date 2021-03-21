@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { UserPageRoutingModule } from './user-routing.module';
+import { FreezPageRoutingModule } from './freez-routing.module';
 
-import { UserPage } from './user.page';
+import { FreezPage } from './freez.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UserPageRoutingModule
+    FreezPageRoutingModule
   ],
-  declarations: [UserPage]
+  declarations: [FreezPage]
 })
-export class UserPageModule {}
+export class FreezPageModule {}

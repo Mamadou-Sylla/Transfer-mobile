@@ -9,19 +9,27 @@
 </ion-card>
 </div>
 <div class="login">
-  <ion-item>
-    <ion-label position="stacked">Telephone</ion-label>
-    <ion-input placeholder="77 777 77 77"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Password</ion-label>
-    <ion-input placeholder="......."></ion-input>
-  </ion-item>
-  <div class="link">
-    <a id="link" href="#">Mot de passe oublié?</a>
-  </div>
-  <div class="btn">
-    <ion-button id="btn" color="secondary" routerLink="/admin">Se connecter</ion-button>
-  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="stacked">Username</ion-label>
+      <ion-input type="text" placeholder="username" formControlName="username" [ngClass]="{ 'is-invalid': submitted } && f.username.errors" ></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="submitted && f.username.errors" class="invalid-feedback">   
+       <p *ngIf="f.username.errors.required">Username obligatoire!</p>
+    </ion-text>
+    <ion-item id='password'>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input type="password" placeholder="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors}" ></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="submitted && f.password.errors" class="invalid-feedback">   
+      <p *ngIf="f.password.errors.required">Mot de passe obligatoire!</p>
+    </ion-text>    
+    <div class="link">
+      <a id="link" href="#">Mot de passe oublié?</a>
+    </div>
+    <div class="btn">
+      <ion-button id="btn" type="submit" color="secondary">Se connecter</ion-button>
+    </div>
+  </form>
 </div>
 </ion-content>

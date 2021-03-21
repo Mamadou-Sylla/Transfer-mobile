@@ -2,9 +2,10 @@
   <div class="container">
     <ion-card>
       <ion-card-content>
-        <button><img src="../../../assets/icon/accueil.png" alt="Menu"/></button>
+        <button routerLink="/admin"><img src="../../../assets/icon/accueil.png" alt="Menu"/></button>
         <img class="logo" src="../../assets/images/Logo.png" alt="Loga Money SA"/>
       </ion-card-content>
+      <h1><span><ion-icon name="return-up-forward-outline"></ion-icon></span>Dépôt</h1>
       <div class="bottom"></div>
     </ion-card>
   </div>
@@ -24,58 +25,87 @@
   </div>
 
   <div class="item">
-    <form>
+    <form [formGroup]="DepotForm" (ngSubmit)="OnSubmit()">
       <div *ngIf="selectTabs == 'emetteur'">
         <ion-item>
           <ion-label position="stacked">N°CNI</ion-label>
-          <ion-input placeholder="1 291 1998 23 221"></ion-input>
+          <ion-input type="text" placeholder="1 291 1998 23 221" formControlName="cni" [ngClass]="{ 'is-invalid': submitted } && f.cni?.errors"></ion-input>
         </ion-item>
+                  <ion-text color="danger" *ngIf="submitted && f.cni.errors" class="invalid-feedback">
+                    <p *ngIf="f.cni.errors.required">N°CNI obligatoire!</p>
+                  </ion-text>
         <ion-item>
           <ion-label position="stacked">Nom</ion-label>
-          <ion-input placeholder="DIALLO"></ion-input>
+          <ion-input type="text" placeholder="DIALLO" formControlName="nom" [ngClass]="{ 'is-invalid': submitted } && f.nom.errors"></ion-input>
         </ion-item>
+                  <ion-text color="danger" *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+                    <p *ngIf="f.nom.errors.required">Nom obligatoire!</p>
+                  </ion-text>
         <ion-item>
           <ion-label position="stacked">Prénom</ion-label>
-          <ion-input placeholder="Saliou"></ion-input>
+          <ion-input type="text" placeholder="Saliou" formControlName="prenom" [ngClass]="{ 'is-invalid': submitted } && f.prenom.errors"></ion-input>
         </ion-item>
+                  <ion-text color="danger" *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
+                    <p *ngIf="f.prenom.errors.required">Prenom obligatoire!</p>
+                  </ion-text>
         <ion-item>
           <ion-label position="stacked">Téléphone</ion-label>
-          <ion-input placeholder="77 007 77 70"></ion-input>
+          <ion-input type="number" placeholder="77 007 77 70" formControlName="telephone" [ngClass]="{ 'is-invalid': submitted } && f.telephone.errors"></ion-input>
         </ion-item>
+                  <ion-text color="danger" *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+                    <p *ngIf="f.telephone.errors.required">Telephone obligatoire!</p>
+                  </ion-text>
         <ion-item>
           <ion-label position="stacked">Montant</ion-label>
-          <ion-input placeholder="350 000"></ion-input>
+          <ion-input type="number" (keypress)="getFeez($event)" placeholder="350 000" formControlName="montant" [ngClass]="{ 'is-invalid': submitted } && f.montant.errors"></ion-input>
         </ion-item>
+                  <ion-text color="danger" *ngIf="submitted && f.montant.errors" class="invalid-feedback">
+                    <p *ngIf="f.montant.errors.required">Montant obligatoire!</p>
+                  </ion-text>
         <ion-item class="frais">
           <ion-label position="stacked">Frais</ion-label>
-          <ion-input placeholder="12 000"></ion-input>
+          <ion-input type="number" [(ngModel)]="frais" [ngModelOptions]="{standalone: true}"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Total</ion-label>
-          <ion-input placeholder="362 000"></ion-input>
+          <ion-input type="number" placeholder="362 000"></ion-input>
         </ion-item>
       </div>
       <div *ngIf="selectTabs == 'beneficiaire'">
         <ion-item>
-          <ion-label position="stacked">N°CNI</ion-label>
-          <ion-input placeholder="1 291 1998 23 221"></ion-input>
+          <ion-label position="stacked">Prénom</ion-label>
+          <ion-input type="text" placeholder="Mariama" formControlName="prenomclient" [ngClass]="{ 'is-invalid': submitted } && f.prenomclient.errors"></ion-input>
         </ion-item>
+        <ion-text color="danger" *ngIf="submitted && f.prenomclient.errors" class="invalid-feedback">
+          <p *ngIf="f.prenomclient.errors.required">Prenom obligatoire!</p>
+        </ion-text>
+
         <ion-item>
           <ion-label position="stacked">Nom</ion-label>
-          <ion-input placeholder="DIALLO"></ion-input>
+          <ion-input type="text" placeholder="DIALLO" formControlName="nomclient" [ngClass]="{ 'is-invalid': submitted } && f.nomclient.errors"></ion-input>
         </ion-item>
-        <ion-item>
-          <ion-label position="stacked">Prénom</ion-label>
-          <ion-input placeholder="Mariama"></ion-input>
-        </ion-item>
+              <ion-text color="danger" *ngIf="submitted && f.nomclient.errors" class="invalid-feedback">
+                <p *ngIf="f.nomclient.errors.required">Nom obligatoire!</p>
+              </ion-text>
+
         <ion-item>
           <ion-label position="stacked">Téléphone</ion-label>
-          <ion-input placeholder="77 008 08 08"></ion-input>
+          <ion-input type="number" placeholder="77 008 08 08" formControlName="cell" [ngClass]="{ 'is-invalid': submitted } && f.cell.errors"></ion-input>
         </ion-item>
+            <ion-text color="danger" *ngIf="submitted && f.cell.errors" class="invalid-feedback">
+              <p *ngIf="f.cell.errors.required">Telephone obligatoire!</p>
+            </ion-text>
       </div>
       <div class="btn">
-        <button id="btn" (click)="OnSubmit()">Suivant</button>
+        <button id="btn" type="submit" expand="block">Envoyer</button>
       </div>
     </form>
   </div>
+
+
+
+
+
 </ion-content>
+
+

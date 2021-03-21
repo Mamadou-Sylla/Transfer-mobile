@@ -1,3 +1,41 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu menuId="main-menu" contentId="main">
+    <ion-content>
+    <div class="container">
+      <div class="sombre">
+        <ion-button color="secondary"><ion-icon name="moon-outline"></ion-icon></ion-button>
+      </div>
+      <div class="nav-link">
+
+        <ion-item button class="item">
+          <ion-label>
+          <a routerLink='/admin'><ion-icon name="home"></ion-icon><span>Home</span></a>
+          </ion-label>
+        </ion-item>
+
+        <ion-item button class="item">
+          <ion-label>
+            <a routerLink="/list-transactions"><ion-icon name="sync-outline"></ion-icon><span>Transaction</span></a>
+          </ion-label>
+        </ion-item>
+
+        <ion-item button class="item">
+          <ion-label>
+            <a routerLink="/commission"><ion-icon name="apps-outline"></ion-icon><span>Commissions</span></a>
+          </ion-label>
+        </ion-item>
+
+        <ion-item class="item">
+          <ion-label>
+            <a routerLink="/calculateur"><ion-icon name="calculator-outline"></ion-icon><span>Calculateur</span></a>
+          </ion-label>
+        </ion-item>
+      </div>
+      <div class="logout">
+        <a (click)="logout()"><span>Déconnexion<ion-icon name="arrow-forward-outline"></ion-icon></span></a>
+      </div>
+      </div>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

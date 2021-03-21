@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Storage} from '@ionic/storage';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPage implements OnInit {
 
-  constructor() { }
+  constructor(private Authlogout: AuthService ) { }
 
   ngOnInit() {
   }
- 
+  logout(){
+    this.Authlogout.logout();
+  }
 }

@@ -37,13 +37,14 @@ ion-content
   span
   {
     color: $color-secondary;
-    margin-right: 5px;
+    margin-right: 10px;
     ion-icon
     {
       /*size: 100px;
       width: 80px;
       height: 30px;*/
       font-size: 40px;
+      margin-bottom: -10px;
     }
   }
   .bottom
@@ -88,19 +89,25 @@ ion-content
   }
   .btn
   {
-    margin-top: 10%;
+    margin-top: 5%;
     #btn
     {
-      margin-left: 10%;
+      margin-left: 25%;
       background: $icon-color;
       border-radius: 30px;
-      width: 80%;
-      height: 70px;
+      width: 50%;
+      height: 50px;
       margin-bottom: 20px;
       color: #FFFFFF;
       font-size: 30px;
     }
   }
+
+  p
+  {
+    margin: 10px;
+  }
 }
+
 
 

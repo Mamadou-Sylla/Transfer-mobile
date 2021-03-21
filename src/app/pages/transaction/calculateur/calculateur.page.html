@@ -1,0 +1,50 @@
+<ion-content>
+  <div class="container">
+    <ion-card>
+      <ion-card-content>
+        <button routerLink="/admin"><img src="../../../assets/icon/accueil.png" alt="Menu"/></button>
+        <img class="logo" src="../../assets/images/Logo.png" alt="Loga Money SA"/>
+      </ion-card-content>
+      <h1><span><ion-icon name="return-up-forward-outline"></ion-icon></span>Calculateur de frais</h1>
+      <div class="bottom"></div>
+    </ion-card>
+  </div>
+
+<!--  body-->
+  <div class="item">
+    <form [formGroup]="Calcul" (ngSubmit)="OnSubmit()">
+        <ion-item>
+          <ion-label position="stacked">Montant</ion-label>
+          <ion-input type="number" placeholder="10 000" formControlName="montant" [ngClass]="{ 'is-invalid': submitted } && f.montant?.errors"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="submitted && f.montant.errors" class="invalid-feedback">
+          <p *ngIf="f.montant.errors.required">Montant obligatoire!</p>
+        </ion-text>
+        <div class="btn">
+          <button id="btn" type="submit" expand="block">Calculer</button>
+        </div>
+    </form>
+  </div>
+
+
+
+
+    <!--Footer-->
+<!--    <ion-tabs>-->
+<!--      <ion-tab-bar slot="bottom">-->
+<!--        <ion-tab-button routerLink="/admin" tab="schedule">-->
+<!--          <ion-img src="../../../assets/icon/home-inactif.png"></ion-img>-->
+<!--        </ion-tab-button>-->
+<!--        <ion-tab-button routerLink="/list-transactions" tab="schedule">-->
+<!--          <ion-img src="../../../assets/icon/Vector (22).png"></ion-img>-->
+<!--        </ion-tab-button>-->
+<!--        <ion-tab-button routerLink="/commission" tab="schedule">-->
+<!--          <ion-img src="../../../assets/icon/Vector (13).png"></ion-img>-->
+<!--        </ion-tab-button>-->
+<!--        <ion-tab-button routerLink="/calculateur" tab="schedule">-->
+<!--          <ion-img src="../../../assets/icon/calcul.png"></ion-img>-->
+<!--        </ion-tab-button>-->
+<!--      </ion-tab-bar>-->
+<!--    </ion-tabs>-->
+</ion-content>
+

@@ -1,0 +1,41 @@
+@import "../../../../assets/style/style.scss";
+
+ion-content
+{
+  .ion-content
+  {
+    margin-left: 10px;
+    .item-text
+    {
+      h6
+      {
+        color: grey;
+        font-size: 15px;
+      }
+      h4
+      {
+        font-size: 20px;
+      }
+    }
+
+  }
+}
+.Okeybtn
+{
+  margin-left: 15%;
+  background: $icon-color;
+  border-radius: 20px;
+  width: 40%;
+  height: 50px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+  font-size: 20px;
+}
+#cancelled
+{
+  color: grey;
+  font-size: 20px;
+  border:none;
+  width: 40%;
+  margin-left: -5px;
+}

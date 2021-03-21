@@ -29,3 +29,106 @@ ion-content
 {
     --ion-background-color:#F2F2F2;
 }
+
+.alertCtrl
+{
+
+    .alert-head
+    {
+        padding: 0%;
+    }
+    .title
+    {
+        width: 100%;
+        padding-top:0;
+        h1
+        {
+            text-align: center;
+            color: grey;
+        }
+    }
+    .my-alert-wrapper
+    {
+        width: 100%;
+    }
+    .my-custom-alert
+    {
+        .item
+        {
+            padding-top: 5px;
+            text-align: left;
+            p
+            {
+                font-family: Helvetica;
+                font-style: normal;
+                color: grey;
+                font-size: 15px;
+            }
+            h5
+            {
+                font-family: Helvetica;
+                font-style: normal;
+                color: #000000;
+                margin-top: 0;
+            }
+        }
+        .item-first
+        {
+            text-align: left;
+            p
+            {
+                font-family: Helvetica;
+                font-style: normal;
+                color: grey;
+                font-size: 15px;
+            }
+            h5
+            {
+                font-family: Helvetica;
+                font-style: normal;
+                color: #000000;
+            }
+        }
+    }
+  .btnFrais
+  {
+    background: #FA4A0C;
+    border-radius: 30px;
+    width: 40%;
+    margin-right: 30%;
+    height: 40px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    font-size: 20px;
+  }
+    .btnOkey
+  {
+      background: #FA4A0C;
+      border-radius: 30px;
+      width: 30%;
+      height: 40px;
+      margin-bottom: 20px;
+      color: #FFFFFF;
+      font-size: 20px;
+  }
+  .cancelled
+  {
+    color: grey;
+    background: #FFFFFF;
+    font-size: 20px;
+    border:none;
+    width: 20%;
+    margin-left: -5px;
+  }
+  .alert-message.sc-ion-alert-ios {
+    max-height: 40% !important;
+    }
+    .alert-button.sc-ion-alert-ios:last-child {
+        margin-right: 5px;
+    }
+
+
+
+}
+
+
